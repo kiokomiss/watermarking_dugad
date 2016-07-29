@@ -1,9 +1,37 @@
-﻿  Dugad_pipe_filter.cpp
-c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(301): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(556): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'FILE *'
-c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(556): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 2 has type 'FILE *'
-c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(401): warning C4101: 's2': unreferenced local variable
-c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(870): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'FILE *'
-c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(870): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 2 has type 'FILE *'
-c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(706): warning C4101: 'row': unreferenced local variable
-  Watermarking_Dugad.vcxproj -> C:\Users\evelina.boytsova\Documents\Visual Studio 2015\Projects\Watermarking_Dugad\Debug\Watermarking_Dugad.exe
+﻿  stdafx.cpp
+  Pipes.cpp
+  Dugad_pipe_filter.cpp
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(301): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(556): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'FILE *'
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(556): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 2 has type 'FILE *'
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(401): warning C4101: 's2': unreferenced local variable
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(870): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'FILE *'
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(870): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 2 has type 'FILE *'
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(706): warning C4101: 'row': unreferenced local variable
+  Create_buffer.cpp
+  Generating Code...
+  wm.c
+  wingetopt.c
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wingetopt.c(14): warning C4005: 'NULL': macro redefinition
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\vcruntime.h(226): note: see previous definition of 'NULL'
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wingetopt.c(44): warning C4013: 'strcmp' undefined; assuming extern returning int
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wingetopt.c(49): warning C4013: 'strchr' undefined; assuming extern returning int
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wingetopt.c(49): warning C4047: '=': 'char *' differs in levels of indirection from 'int'
+  wavelet.c
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(185): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(344): warning C4244: '=': conversion from 'Pixel' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(345): warning C4244: '=': conversion from 'Pixel' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(347): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(519): warning C4244: '=': conversion from 'Pixel' to 'IntPixel', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(1397): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(1482): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(1572): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(2864): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\wavelet.c(2898): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  pollen_stuff.c
+  param_stuff.c
+  dwt_util.c
+  dwt.c
+c:\git\watermarking_dugad\watermarking_dugad\watermarking_dugad\dwt.c(74): warning C4013: 'free_image' undefined; assuming extern returning int
+  Generating Code...
+  Watermarking_Dugad.vcxproj -> C:\git\Watermarking_Dugad\Watermarking_Dugad\Debug\Watermarking_Dugad.exe

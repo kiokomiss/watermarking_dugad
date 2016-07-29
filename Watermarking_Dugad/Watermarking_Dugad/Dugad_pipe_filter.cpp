@@ -356,7 +356,7 @@ void wm_subband(Image s, double *w, int n, double a, double t1)
 			++count_coeff;
 		}
 	}
-		printf("\nCount_coeff= %d", count_coeff);
+		//printf("\nCount_coeff= %d", count_coeff);
          
 }
 
@@ -605,7 +605,7 @@ void wm_dugad_e(int argc, char **argv)
 	while (count_planes < total_planes) 
 	{
 
-		if (((count_planes + 1) % 3) == 1) //if (true) 
+		if (((count_planes + 1) % 3) != 1) //if (true) 
 		{
 			//embed signature in U plane
 			gray * image_UV = (gray*)malloc(pixels_in_plane / 2 * sizeof(gray));
