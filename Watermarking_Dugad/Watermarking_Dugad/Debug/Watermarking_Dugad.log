@@ -1,0 +1,9 @@
+﻿  Dugad_pipe_filter.cpp
+c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(301): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(556): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'FILE *'
+c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(556): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 2 has type 'FILE *'
+c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(401): warning C4101: 's2': unreferenced local variable
+c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(870): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 1 has type 'FILE *'
+c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(870): warning C4477: 'printf' : format string '%i' requires an argument of type 'int', but variadic argument 2 has type 'FILE *'
+c:\users\evelina.boytsova\documents\visual studio 2015\projects\watermarking_dugad\watermarking_dugad\dugad_pipe_filter.cpp(706): warning C4101: 'row': unreferenced local variable
+  Watermarking_Dugad.vcxproj -> C:\Users\evelina.boytsova\Documents\Visual Studio 2015\Projects\Watermarking_Dugad\Debug\Watermarking_Dugad.exe
