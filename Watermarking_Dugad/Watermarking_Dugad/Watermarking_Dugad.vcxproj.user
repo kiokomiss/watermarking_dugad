@@ -4,4 +4,8 @@
     <LocalDebuggerCommandArguments> -p extract -o C:\WM_test\Test\Dugad_n100_out.wm -s C:\WM_test\Test\Dugad_n100.sig C:\WM_test\Test\Test_dugad_embed_bgr24_960_540.avi</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LocalDebuggerCommand>-p embed -s C:\WM\TEST_Dugad\Dugad_n500.sig -F C:\WM\Meerwald\filter.dat  -o C:\WM\TEST_Dugad\Test_30s_embed_n500.avi C:\WM\TEST_Dugad\Test_30s.avi</LocalDebuggerCommand>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

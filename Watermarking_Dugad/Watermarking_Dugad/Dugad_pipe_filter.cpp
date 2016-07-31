@@ -30,8 +30,8 @@
 
 using namespace std;
 
+void usage_gen_dugad_sig(void){
 
-void usage_gen_dugad_sig(void) {
 	fprintf(stderr, "usage: -p generate [-a n] [-e n] [-f n] [-F file] [-l n] [-n n] [-o file] [-s file] [-S n] [-t n] [-T n]\n\n");
 	fprintf(stderr, "\t-a n\t\talpha factor (default 0.2)\n");
 	fprintf(stderr, "\t-d n\t\tdeviation (default 1.0)\n");
@@ -561,46 +561,15 @@ void wm_dugad_e(int argc, char **argv)
 	unsigned int stride = cols* rows * 2;
 
 	total_planes = total_frames * 3;
-	//total_planes = 480;
+	total_planes = 120;
 	init_dwt(cols/2, rows, filter_name, filter, level, method);
 
-	//for bgr24 
-	/* while (count_planes < total_planes) {
-
-		gray * image = (gray*)malloc(pixels_in_plane * sizeof(gray));
-
-		fread(image, pixels_in_plane, sizeof(gray), in);
-		//printf("\nImage read from pipe\n");
-
-		if (true) //if (((count_planes + 1) % 3) == 1)
-		{
-			// wavelet transform
-			dwts = fdwt(image);
-			//printf("\nForward DWT done\n");
-
-			// embed watermark in all subbands of a decomposition level
-			for (i = 0, s = dwts; i < 3; i++, s = s->coarse) {
-				wm_subband(s->horizontal->image, watermark, n, alpha, t1);
-				wm_subband(s->vertical->image, watermark, n, alpha, t1);
-				wm_subband(s->diagonal->image, watermark, n, alpha, t1);
-			}
-
-			//printf("\nWatermark is inserted into the image subbands\n");
-			idwt(dwts, image);
-			//printf("\nInverse DWT done\n");
-
-			//printf("\n Count_frames= %d\n", count_frames);
-		}
-		count_planes++;
-		//((count_planes) % 3) == 0) ? (count_frames++) : (count_frames);)
-		fwrite(image, pixels_in_plane, sizeof(gray), out);
-		fflush(out);
-		fflush(in);
-		free(image);
-
-
-	}*/
-
+	FILE *outDWTHH = NULL;
+	char *filenameDWTHH = "C:\\WM\\TEST_Dugad\\Test_dugad_DWTHH.avi";
+	FILE *outDWTHL = NULL;
+	char *filenameDWTHL = "C:\\WM\\TEST_Dugad\\Test_dugad_DWTHL.avi";
+	FILE *outDWTLH = NULL;
+	char *filenameDWTLH = "C:\\WM\\TEST_Dugad\\Test_dugad_DWTLH.avi";
 	// for yuv422p
 	while (count_planes < total_planes) 
 	{
@@ -615,21 +584,40 @@ void wm_dugad_e(int argc, char **argv)
 			// wavelet transform
 			dwts = fdwt(image_UV);
 
-			/*for (i = 0, s2 = dwts; i < 3; i++, s2 = s2->coarse)
+		/*	for (i = 0, s2 = dwts; i < 3; i++, s2 = s2->coarse)
 			{
-				if (i == 0)
+				if ((i == 0)&&(((count_planes + 1) % 3) == 2))
 				{
-					Image s1_horizontal;
+					Image s1_horizontal, s1_diagonal,s1_vertical;
 					s1_horizontal = get_absolute_image_scaled(s2->horizontal->image);
+					//s1_diagonal = get_absolute_image_scaled(s2->diagonal->image);
+					//s1_vertical = get_absolute_image_scaled(s2->vertical->image);
 					gray* s1_horizontal_gray = (gray*)malloc(s1_horizontal->size * sizeof(gray));
+					//gray* s1_diagonal_gray = (gray*)malloc(s1_diagonal->size * sizeof(gray));
+					//gray* s1_vertical_gray = (gray*)malloc(s1_vertical->size * sizeof(gray));
 					image_to_gray(s1_horizontal, s1_horizontal_gray);
-					printf("\ns1_horizontal->size=%d \n", s1_horizontal->size);
-					printf("\ns2->horizontal->image->size=%d \n", s2->horizontal->image->size);
-					outPNG = getTestPNG(PNGfilename, s1_horizontal->width, s1_horizontal->height);
-					fwrite(s1_horizontal_gray, s1_horizontal->size, sizeof(gray), outPNG);
-					fflush(outPNG);
+					//image_to_gray(s1_diagonal, s1_diagonal_gray);
+					//image_to_gray(s1_vertical, s1_vertical_gray);
+					//printf("\ns1_horizontal->size=%d \n", s1_horizontal->size);
+					//printf("\ns2->horizontal->image->size=%d \n", s2->horizontal->image->size);
+					//outPNG = getTestPNG(PNGfilename, s1_horizontal->width, s1_horizontal->height);
+					//fwrite(s1_horizontal_gray, s1_horizontal->size, sizeof(gray), outPNG);
+					//fflush(outPNG);
+					outDWTHH = getVidOFMPEG4(filenameDWTHH, s1_horizontal->width, s1_horizontal->height);
+				    //outDWTHL = getVidOFMPEG4(filenameDWTHL, s1_diagonal->width, s1_diagonal->height);
+					//outDWTLH = getVidOFMPEG4(filenameDWTLH, s1_vertical->width, s1_vertical->height);
+					fwrite(s1_horizontal_gray, s1_horizontal->size, sizeof(gray), outDWTHH);
+					//fwrite(s1_diagonal_gray, s1_diagonal->size, sizeof(gray), outDWTHL);
+					//fwrite(s1_vertical_gray, s1_vertical->size, sizeof(gray), outDWTLH);
+					fflush(outDWTHH);
+					//fflush(outDWTLH);
+					//fflush(outDWTHL);
 					free_image(s1_horizontal);
+					//free_image(s1_diagonal);
+					//free_image(s1_vertical);
 					free(s1_horizontal_gray);
+					//free(s1_diagonal_gray);
+					//free(s1_vertical_gray);
 				}
 			} */
 			
@@ -661,6 +649,7 @@ void wm_dugad_e(int argc, char **argv)
 			free(image);
 		  }
 		count_planes++;
+		printf("\nCount_planes=%d ", count_planes);
 		//((count_planes) % 3) == 0) ? (count_frames++) : (count_frames);)
 		fflush(out);
 		fflush(in);
@@ -668,7 +657,10 @@ void wm_dugad_e(int argc, char **argv)
 	}
 	_pclose(in);
 	_pclose(out);
-	//_pclose(outPNG);
+	_pclose(outDWTHH);
+	_pclose(outDWTHL);
+	_pclose(outDWTLH);
+
 	free(watermark);
 
 	unsigned int time2 = GetTickCount();

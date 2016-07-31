@@ -1,9 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "pipes.h"
 
-char *FFMPEG_BIN = "C:\\Portable\\ffmpeg\\ffmpeg.exe";
-char *FFPLAY_BIN = "C:\\Portable\\ffmpeg\\ffplay.exe";
-char *FFPROBE_BIN = "C:\\Portable\\ffmpeg\\ffprobe.exe";
+char *FFMPEG_BIN = "ffmpeg";
+char *FFPLAY_BIN = "ffplay";
+char *FFPROBE_BIN = "ffprobe";
+
+//char *FFMPEG_BIN = "C:\\Portable\\ffmpeg\\ffmpeg.exe";
+//char *FFPLAY_BIN = "C:\\Portable\\ffmpeg\\ffplay.exe";
+//char *FFPROBE_BIN = "C:\\Portable\\ffmpeg\\ffprobe.exe";
 
 FILE *getVidIStream(char *filename) {
 	char command[512];
@@ -41,6 +45,14 @@ FILE *getTestPNG(char* filename, int width, int height) {
 	//Write 1 png picture
 	_snprintf_s((char*)&command, 512 * sizeof(char), 512, "%s -f rawvideo -pix_fmt gray -r 24 -s %d:%d -y -i - -s %i:%i  -frames:v 1  %s", FFMPEG_BIN, width, height, width, height, filename);
 	printf("\nGetTestPNG: %s", command);
+	return _popen(command, "wb");
+}
+
+FILE *getVidOFMPEG4(char* filename, int width, int height) {
+	char command[512];
+	//Write yuv422p
+	_snprintf_s((char*)&command, 512 * sizeof(char), 512, "%s -y -f rawvideo -pix_fmt gray -r 24 -s %i:%i  -i - -s %i:%i -an -vcodec rawvideo -pix_fmt gray -shortest  %s", FFMPEG_BIN, width, height, width, height, filename);
+	printf("\nGetVidOFStream: %s", command);
 	return _popen(command, "wb");
 }
 
